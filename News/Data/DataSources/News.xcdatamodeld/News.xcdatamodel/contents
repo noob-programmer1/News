@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23231" systemVersion="24D81" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="NO">
+    <entity name="BookmarkedArticle" representedClassName="BookmarkedArticle" syncable="YES">
+        <attribute name="articleId" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="articleDescription" optional="YES" attributeType="String"/>
+        <attribute name="url" attributeType="String"/>
+        <attribute name="urlToImage" optional="YES" attributeType="String"/>
+        <attribute name="publishedAt" optional="YES" attributeType="String"/>
+        <attribute name="sourceName" optional="YES" attributeType="String"/>
+        <attribute name="bookmarkedAt" attributeType="Date" usesScalarValueType="NO"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="articleId"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="CachedArticle" representedClassName="CachedArticle" syncable="YES">
+        <attribute name="articleId" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="articleDescription" optional="YES" attributeType="String"/>
+        <attribute name="url" attributeType="String"/>
+        <attribute name="urlToImage" optional="YES" attributeType="String"/>
+        <attribute name="publishedAt" optional="YES" attributeType="String"/>
+        <attribute name="sourceName" optional="YES" attributeType="String"/>
+        <attribute name="htmlContent" optional="YES" attributeType="String"/>
+        <attribute name="cachedAt" attributeType="Date" usesScalarValueType="NO"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="url"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="ReadProgress" representedClassName="ReadProgress" syncable="YES">
+        <attribute name="articleUrl" attributeType="String"/>
+        <attribute name="scrollY" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="contentHeight" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="lastReadAt" attributeType="Date" usesScalarValueType="NO"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="articleUrl"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="ReadingSession" representedClassName="ReadingSession" syncable="YES">
+        <attribute name="articleUrl" attributeType="String"/>
+        <attribute name="articleTitle" attributeType="String"/>
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="duration" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="date" attributeType="Date" usesScalarValueType="NO"/>
+    </entity>
+</model>
